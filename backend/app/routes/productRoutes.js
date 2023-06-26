@@ -7,8 +7,8 @@ const ticketRoutes = require('./ticketRoutes');
 // Ruta para crear un producto
 router.post('/', async (req, res) => {
    try {
-      const { title, description, status } = req.body;
-      const productData = { title, description, status };
+      const { title, description, status, version } = req.body;
+      const productData = { title, description, status, version };
       const createdProduct = await productController.createProduct(productData);
       res.status(201).json(createdProduct);
    } catch (error) {
